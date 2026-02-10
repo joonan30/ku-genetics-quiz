@@ -23,7 +23,7 @@ export default function LoginForm() {
     try {
       const result = await login(email, password)
       if (!result.user.emailVerified) {
-        setError('이메일 인증이 필요합니다. 받은 편지함을 확인하세요.')
+        setError('Email verification is required. Please check your inbox.')
         await logout()
         setLoading(false)
         return
@@ -48,9 +48,9 @@ export default function LoginForm() {
       }
       await resendVerification()
       await logout()
-      setInfo('인증 이메일을 다시 발송했습니다. 받은 편지함을 확인하세요.')
+      setInfo('Verification email has been resent. Please check your inbox.')
     } catch {
-      setError('이메일과 비밀번호를 먼저 입력하세요.')
+      setError('Please enter your email and password first.')
     }
     setLoading(false)
   }
@@ -69,10 +69,10 @@ export default function LoginForm() {
         {error && (
           <div className="bg-red-50 text-red-600 p-3 rounded-lg mb-4 text-sm">
             {error}
-            {error.includes('이메일 인증') && (
+            {error.includes('Email verification') && (
               <button onClick={handleResend} disabled={loading}
                 className="block mt-2 text-emerald-600 font-medium hover:underline text-xs">
-                인증 이메일 다시 보내기
+                Resend verification email
               </button>
             )}
           </div>

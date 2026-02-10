@@ -19,18 +19,18 @@ export default function SignupForm() {
   async function handleSubmit(e) {
     e.preventDefault()
     setError('')
-    if (quiz.q1 !== 'yes') return setError('첫 번째 질문의 답이 올바르지 않습니다.')
-    if (quiz.q2.trim() !== '1905') return setError('두 번째 질문의 답이 올바르지 않습니다.')
+    if (quiz.q1 !== 'yes') return setError('The answer to the first question is incorrect.')
+    if (quiz.q2.trim() !== '1905') return setError('The answer to the second question is incorrect.')
     const domain = form.email.split('@')[1]
     if (!domain || !ALLOWED_DOMAINS.includes(domain.toLowerCase())) {
-      return setError('korea.ac.kr 이메일만 가입할 수 있습니다.')
+      return setError('Only korea.ac.kr emails are allowed.')
     }
     if (form.password !== form.passwordConfirm) return setError('Passwords do not match.')
     if (form.password.length < 6) return setError('Password must be at least 6 characters.')
     setLoading(true)
     try {
       await signup(form.email, form.password, form.name, form.studentId)
-      navigate('/login', { state: { message: '인증 이메일을 발송했습니다. 이메일을 확인한 후 로그인하세요.' } })
+      navigate('/login', { state: { message: 'A verification email has been sent. Please check your email and log in.' } })
     } catch (err) {
       setError(err.code === 'auth/email-already-in-use' ? 'Email already in use.' : 'Sign up failed. Please try again.')
     }
@@ -56,9 +56,9 @@ export default function SignupForm() {
         <form onSubmit={handleSubmit} className="space-y-3">
           {/* Verification Quiz */}
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 space-y-4">
-            <p className="text-sm font-bold text-amber-800">본인 확인 퀴즈</p>
+            <p className="text-sm font-bold text-amber-800">Verification Quiz</p>
             <div>
-              <p className="text-sm font-medium text-gray-700 mb-2">2025년 고연전은 당연히 위대한 고려대의 승리인가?</p>
+              <p className="text-sm font-medium text-gray-700 mb-2">Was the 2025 Ko-Yon Games obviously a victory for the great Korea University?</p>
               <div className="flex gap-3">
                 <button type="button" onClick={() => setQuiz({ ...quiz, q1: 'yes' })}
                   className={`flex-1 py-2 rounded-lg text-sm font-medium transition border ${
@@ -79,10 +79,10 @@ export default function SignupForm() {
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">우리가 말한 숫자는?</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">What is the number we mentioned?</label>
               <input type="text" value={quiz.q2} onChange={(e) => setQuiz({ ...quiz, q2: e.target.value })}
                 className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition"
-                placeholder="숫자를 입력하세요" />
+                placeholder="Enter the number" />
             </div>
           </div>
 
