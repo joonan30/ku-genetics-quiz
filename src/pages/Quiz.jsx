@@ -43,6 +43,10 @@ export default function Quiz() {
         const q = query(collection(db, 'questions'), where('stage', '==', stage.id))
         const snapshot = await getDocs(q)
         const qs = snapshot.docs.map((d) => ({ id: d.id, ...d.data() }))
+        if (qs.length === 0) {
+          setError('No questions found for this stage. Please contact the instructor.')
+          return
+        }
         // Shuffle
         for (let i = qs.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1))
