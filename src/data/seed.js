@@ -1,9 +1,13 @@
 /**
  * Seed script: uploads questions to Firestore
  *
+ * NOTE: questions.js was deleted after uploading to Firestore.
+ * To re-run this script, restore questions.js first.
+ *
  * Usage:
  *   1. Add Firebase config to .env
- *   2. npm run seed
+ *   2. Ensure questions.js exists in this directory
+ *   3. npm run seed
  */
 import { initializeApp } from 'firebase/app'
 import { getFirestore, collection, addDoc, getDocs, deleteDoc } from 'firebase/firestore'

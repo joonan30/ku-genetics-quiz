@@ -1,9 +1,8 @@
 import { useEffect, useState, useCallback } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { doc, updateDoc, increment, arrayUnion } from 'firebase/firestore'
+import { doc, updateDoc, increment, arrayUnion, collection, getDocs, query, where } from 'firebase/firestore'
 import { db } from '../firebase/config'
 import { useAuth } from '../contexts/AuthContext'
-import { getQuestionsByStage } from '../data/questions'
 import { getStageById } from '../data/stages'
 import { calculateXpEarned, getComboBonus, getLevelFromXp, getTotalXp, getCategoryXpField } from '../utils/xpCalculator'
 import { checkEvolution } from '../data/characters'
@@ -29,6 +28,7 @@ export default function Quiz() {
   const [levelUp, setLevelUp] = useState(null)
   const [evolutionData, setEvolutionData] = useState(null)
   const [newAchievement, setNewAchievement] = useState(null)
+  const [error, setError] = useState(null)
 
   const stage = stageId ? getStageById(stageId) : null
 
@@ -37,13 +37,25 @@ export default function Quiz() {
       navigate('/map')
       return
     }
-    const qs = getQuestionsByStage(stage.id)
-    // Shuffle
-    for (let i = qs.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1))
-      ;[qs[i], qs[j]] = [qs[j], qs[i]]
+
+    async function fetchQuestions() {
+      try {
+        const q = query(collection(db, 'questions'), where('stage', '==', stage.id))
+        const snapshot = await getDocs(q)
+        const qs = snapshot.docs.map((d) => ({ id: d.id, ...d.data() }))
+        // Shuffle
+        for (let i = qs.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1))
+          ;[qs[i], qs[j]] = [qs[j], qs[i]]
+        }
+        setQuestions(qs.slice(0, stage.questionCount))
+      } catch (err) {
+        console.error('Failed to fetch questions:', err)
+        setError('Failed to load questions. Please try again.')
+      }
     }
-    setQuestions(qs.slice(0, stage.questionCount))
+
+    fetchQuestions()
   }, [stage, navigate])
 
   const checkNewAchievements = useCallback(async (updatedProfile) => {
@@ -150,6 +162,19 @@ export default function Quiz() {
       setSelectedAnswer(null)
       setAnswered(false)
     }
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <p className="text-red-600 mb-4">{error}</p>
+          <button onClick={() => window.location.reload()} className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">
+            Retry
+          </button>
+        </div>
+      </div>
+    )
   }
 
   if (!stage || questions.length === 0) {
