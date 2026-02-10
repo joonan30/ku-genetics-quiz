@@ -6,7 +6,7 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/claude-quiz">
+    <BrowserRouter basename="/ku-genetics-quiz">
       <App />
     </BrowserRouter>
   </StrictMode>,
