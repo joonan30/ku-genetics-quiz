@@ -72,7 +72,7 @@ export default function LevelUpModal({ level, evolution, onClose }) {
                   <h2 className="text-2xl font-bold text-gray-800 mb-1">Evolution!</h2>
                   <p className="text-lg font-bold text-purple-600 mb-1">{evolution.newForm.korean}</p>
                   <p className="text-gray-500 text-sm">{evolution.newForm.name}</p>
-                  <p className="text-emerald-600 font-bold mt-2">Level {level}</p>
+                  <p className="text-crimson-800 font-bold mt-2">Level {level}</p>
                   {evolution.stage === 5 && (
                     <p className="text-yellow-500 text-sm mt-1 font-medium">당신의 꿈이 만개했습니다</p>
                   )}
@@ -83,7 +83,7 @@ export default function LevelUpModal({ level, evolution, onClose }) {
                 <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ repeat: 3, duration: 0.6 }}
                   className="text-6xl mb-4">🎉</motion.div>
                 <h2 className="text-2xl font-bold text-gray-800 mb-2">Level Up!</h2>
-                <p className="text-5xl font-extrabold text-emerald-600 mb-2">Level {level}</p>
+                <p className="text-5xl font-extrabold text-crimson-800 mb-2">Level {level}</p>
                 <p className="text-gray-500">Amazing progress! Keep exploring genetics!</p>
               </>
             )}

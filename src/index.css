@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+@theme {
+  --color-crimson-50: #fdf2f4;
+  --color-crimson-100: #fce7ec;
+  --color-crimson-200: #f9ced8;
+  --color-crimson-300: #f4a9bc;
+  --color-crimson-400: #ec7696;
+  --color-crimson-500: #e04b72;
+  --color-crimson-600: #cb2a5a;
+  --color-crimson-700: #a91845;
+  --color-crimson-800: #86001c;
+  --color-crimson-900: #700019;
+  --color-crimson-950: #3d000e;
+}
+
 body {
   margin: 0;
   min-height: 100vh;

@@ -38,7 +38,7 @@ export default function Dashboard() {
           <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
           {nextStage && (
             <Link to={`/quiz/${nextStage.id}`}
-              className="bg-emerald-600 text-white px-6 py-2.5 rounded-xl font-medium hover:bg-emerald-700 transition">
+              className="bg-crimson-800 text-white px-6 py-2.5 rounded-xl font-medium hover:bg-crimson-900 transition">
               Continue: {nextStage.name}
             </Link>
           )}
@@ -57,7 +57,7 @@ export default function Dashboard() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl p-4 text-white mb-4">
+            <div className="bg-gradient-to-r from-crimson-800 to-crimson-950 rounded-xl p-4 text-white mb-4">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-sm opacity-80">Level</span>
                 <span className="text-3xl font-bold">{progress.level}</span>
@@ -74,7 +74,7 @@ export default function Dashboard() {
             {/* Quick stats */}
             <div className="grid grid-cols-2 gap-2 text-center">
               <div className="bg-gray-50 rounded-lg p-2">
-                <p className="text-lg font-bold text-emerald-600">{totalXp}</p>
+                <p className="text-lg font-bold text-crimson-800">{totalXp}</p>
                 <p className="text-xs text-gray-500">Total XP</p>
               </div>
               <div className="bg-gray-50 rounded-lg p-2">
@@ -122,14 +122,14 @@ export default function Dashboard() {
           className="bg-white rounded-2xl shadow p-6 mt-6">
           <div className="flex items-center justify-between mb-3">
             <h3 className="font-bold text-gray-800">Journey Progress</h3>
-            <Link to="/map" className="text-sm text-emerald-600 hover:underline">View Full Map</Link>
+            <Link to="/map" className="text-sm text-crimson-700 hover:underline">View Full Map</Link>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-sm text-gray-500">Anam</span>
             <div className="flex-1 bg-gray-200 rounded-full h-3 relative">
               <motion.div initial={{ width: 0 }} animate={{ width: `${journey.percentage}%` }}
                 transition={{ duration: 1.5 }}
-                className="bg-gradient-to-r from-emerald-400 to-teal-500 h-3 rounded-full" />
+                className="bg-gradient-to-r from-crimson-700 to-crimson-900 h-3 rounded-full" />
             </div>
             <span className="text-sm text-gray-500">Dokdo</span>
           </div>

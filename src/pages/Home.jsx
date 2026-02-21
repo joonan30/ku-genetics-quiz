@@ -15,13 +15,13 @@ export default function Home() {
   const { currentUser } = useAuth()
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-emerald-50 via-teal-50 to-sky-50">
+    <div className="min-h-screen bg-gradient-to-b from-crimson-50/60 to-gray-50">
       <div className="max-w-5xl mx-auto px-4 py-16">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
             Genetics Journey
           </h1>
-          <p className="text-2xl text-emerald-700 font-semibold mb-2">ATCG to 한반도</p>
+          <p className="text-2xl text-crimson-800 font-semibold mb-2">ATCG to 한반도</p>
           <p className="text-xl text-gray-600 mb-2 max-w-2xl mx-auto">
             Journey across all of Korea — Seoul to Jeju, Baekdu to Dokdo — with rare plants as your companions.
           </p>
@@ -31,28 +31,28 @@ export default function Home() {
           <p className="text-sm text-gray-400 mb-8">
             Korea University · BSMS205 Genetics ·{' '}
             <a href="https://chaek.org/books/human-genetics" target="_blank" rel="noopener noreferrer"
-              className="text-emerald-600 hover:text-emerald-700 underline">Textbook</a>
+              className="text-crimson-700 hover:text-crimson-800 underline">Textbook</a>
           </p>
           <div className="flex justify-center gap-4">
             {currentUser ? (
               <>
                 <Link to="/dashboard"
-                  className="bg-emerald-600 text-white px-8 py-3 rounded-xl font-medium hover:bg-emerald-700 transition shadow-lg shadow-emerald-200">
+                  className="bg-crimson-800 text-white px-8 py-3 rounded-xl font-medium hover:bg-crimson-900 transition shadow-lg shadow-crimson-200">
                   Continue Journey
                 </Link>
                 <Link to="/map"
-                  className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-medium hover:bg-gray-50 transition border border-emerald-200">
+                  className="bg-white text-crimson-800 px-8 py-3 rounded-xl font-medium hover:bg-gray-50 transition border border-crimson-200">
                   View Map
                 </Link>
               </>
             ) : (
               <>
                 <Link to="/signup"
-                  className="bg-emerald-600 text-white px-8 py-3 rounded-xl font-medium hover:bg-emerald-700 transition shadow-lg shadow-emerald-200">
+                  className="bg-crimson-800 text-white px-8 py-3 rounded-xl font-medium hover:bg-crimson-900 transition shadow-lg shadow-crimson-200">
                   Start Your Journey
                 </Link>
                 <Link to="/login"
-                  className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-medium hover:bg-gray-50 transition border border-emerald-200">
+                  className="bg-white text-crimson-800 px-8 py-3 rounded-xl font-medium hover:bg-gray-50 transition border border-crimson-200">
                   Login
                 </Link>
               </>

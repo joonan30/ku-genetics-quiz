@@ -1,5 +1,5 @@
 const CATEGORIES = [
-  { key: 'dnaXp', label: 'DNA', color: '#10b981' },
+  { key: 'dnaXp', label: 'DNA', color: '#86001c' },
   { key: 'mendelianXp', label: 'Mendelian', color: '#8b5cf6' },
   { key: 'molecularXp', label: 'Molecular', color: '#0ea5e9' },
   { key: 'evolutionXp', label: 'Evolution', color: '#f59e0b' },
@@ -44,7 +44,7 @@ export default function StatsRadar({ userData }) {
           <line key={i} x1={center} y1={center} x2={p.x} y2={p.y} stroke="#d1d5db" strokeWidth="1" />
         ))}
         {/* Data polygon */}
-        <polygon points={polyData} fill="rgba(16,185,129,0.2)" stroke="#10b981" strokeWidth="2" />
+        <polygon points={polyData} fill="rgba(134,0,28,0.15)" stroke="#86001c" strokeWidth="2" />
         {/* Data points */}
         {points.map((p, i) => (
           <circle key={i} cx={p.x} cy={p.y} r="4" fill={CATEGORIES[i].color} />

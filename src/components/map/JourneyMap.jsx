@@ -22,7 +22,7 @@ export default function JourneyMap({ userData }) {
             </p>
           </div>
           <div className="text-right">
-            <p className="text-2xl font-bold text-emerald-600">{journey.completed}/{journey.total}</p>
+            <p className="text-2xl font-bold text-crimson-800">{journey.completed}/{journey.total}</p>
             <p className="text-xs text-gray-500">Stages Complete</p>
           </div>
         </div>
@@ -31,7 +31,7 @@ export default function JourneyMap({ userData }) {
             initial={{ width: 0 }}
             animate={{ width: `${journey.percentage}%` }}
             transition={{ duration: 1 }}
-            className="bg-gradient-to-r from-emerald-400 to-teal-500 h-3 rounded-full"
+            className="bg-gradient-to-r from-crimson-700 to-crimson-900 h-3 rounded-full"
           />
         </div>
       </div>
@@ -55,14 +55,14 @@ export default function JourneyMap({ userData }) {
                 transition={{ delay: i * 0.05 }}
                 className={`relative md:ml-16 bg-white rounded-xl border-2 p-4 transition-all ${
                   status === 'completed' ? 'border-green-300 bg-green-50/50' :
-                  status === 'available' ? 'border-emerald-400 shadow-md shadow-emerald-100' :
+                  status === 'available' ? 'border-crimson-600 shadow-md shadow-crimson-100' :
                   'border-gray-200 opacity-60'
                 }`}
               >
                 {/* Node dot */}
                 <div className={`hidden md:flex absolute -left-[4.5rem] top-1/2 -translate-y-1/2 w-8 h-8 rounded-full items-center justify-center text-sm font-bold ${
                   status === 'completed' ? 'bg-green-500 text-white' :
-                  status === 'available' ? 'bg-emerald-500 text-white animate-pulse' :
+                  status === 'available' ? 'bg-crimson-700 text-white animate-pulse' :
                   'bg-gray-300 text-gray-500'
                 }`}>
                   {status === 'completed' ? '✓' : status === 'locked' ? '🔒' : i + 1}
@@ -89,7 +89,7 @@ export default function JourneyMap({ userData }) {
                   {status === 'available' && (
                     <button
                       onClick={() => navigate(`/quiz/${stage.id}`)}
-                      className="shrink-0 bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-emerald-700 transition"
+                      className="shrink-0 bg-crimson-800 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-crimson-900 transition"
                     >
                       Start
                     </button>
@@ -98,7 +98,7 @@ export default function JourneyMap({ userData }) {
                     <div className="shrink-0 flex flex-col items-center">
                       <span className="text-2xl">✅</span>
                       <button onClick={() => navigate(`/quiz/${stage.id}`)}
-                        className="text-xs text-emerald-600 hover:underline mt-1">Replay</button>
+                        className="text-xs text-crimson-700 hover:underline mt-1">Replay</button>
                     </div>
                   )}
                   {status === 'locked' && (

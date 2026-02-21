@@ -15,8 +15,8 @@ export default function QuizResults({ score, total, xpEarned, comboBonus, stageN
       {stageName && <p className="text-gray-500 text-sm mb-4">{stageName}</p>}
 
       <div className="grid grid-cols-3 gap-3 my-6">
-        <div className="bg-emerald-50 rounded-xl p-3">
-          <p className="text-xl font-bold text-emerald-600">{score}/{total}</p>
+        <div className="bg-crimson-50 rounded-xl p-3">
+          <p className="text-xl font-bold text-crimson-800">{score}/{total}</p>
           <p className="text-xs text-gray-500">Correct</p>
         </div>
         <div className="bg-blue-50 rounded-xl p-3">
@@ -45,7 +45,7 @@ export default function QuizResults({ score, total, xpEarned, comboBonus, stageN
           Journey Map
         </Link>
         <button onClick={onRetry}
-          className="flex-1 bg-emerald-600 text-white py-3 rounded-xl font-medium hover:bg-emerald-700 transition">
+          className="flex-1 bg-crimson-800 text-white py-3 rounded-xl font-medium hover:bg-crimson-900 transition">
           {passed ? 'Play Again' : 'Retry Stage'}
         </button>
       </div>

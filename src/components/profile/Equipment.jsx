@@ -25,7 +25,7 @@ export default function Equipment({ equipped, inventory, onEquip }) {
                   {comp ? `${comp.name} (${comp.korean})` : `No ${slot.label} Companion`}
                 </p>
                 {comp && (
-                  <p className="text-xs text-emerald-600">{comp.trait} · {comp.effectLabel}</p>
+                  <p className="text-xs text-crimson-700">{comp.trait} · {comp.effectLabel}</p>
                 )}
               </div>
               {inventory && inventory.length > 0 && (

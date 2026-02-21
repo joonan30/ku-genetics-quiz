@@ -34,15 +34,15 @@ export default function Navbar() {
             {NAV_LINKS.map((link) => (
               <Link key={link.to} to={link.to}
                 className={`text-xs sm:text-sm font-medium px-2 py-1 rounded-lg transition whitespace-nowrap ${
-                  location.pathname === link.to ? 'bg-emerald-50 text-emerald-700' : 'text-gray-500 hover:text-gray-800'
+                  location.pathname === link.to ? 'bg-crimson-50 text-crimson-800' : 'text-gray-500 hover:text-gray-800'
                 }`}>
                 {link.label}
               </Link>
             ))}
-            <div className="hidden md:flex items-center gap-2 bg-emerald-50 px-3 py-1.5 rounded-lg shrink-0">
-              <span className="text-xs font-bold text-emerald-700">Lv.{progress.level}</span>
-              <div className="w-12 bg-emerald-200 rounded-full h-1.5">
-                <div className="bg-emerald-500 h-1.5 rounded-full transition-all" style={{ width: `${progress.percentage}%` }} />
+            <div className="hidden md:flex items-center gap-2 bg-crimson-50 px-3 py-1.5 rounded-lg shrink-0">
+              <span className="text-xs font-bold text-crimson-800">Lv.{progress.level}</span>
+              <div className="w-12 bg-crimson-200 rounded-full h-1.5">
+                <div className="bg-crimson-700 h-1.5 rounded-full transition-all" style={{ width: `${progress.percentage}%` }} />
               </div>
             </div>
             <button onClick={logout} className="text-xs text-gray-400 hover:text-gray-600 transition shrink-0 ml-1">
@@ -52,7 +52,7 @@ export default function Navbar() {
         ) : (
           <div className="flex items-center gap-3">
             <Link to="/login" className="text-sm text-gray-500 hover:text-gray-800">Login</Link>
-            <Link to="/signup" className="text-sm bg-emerald-600 text-white px-4 py-1.5 rounded-lg hover:bg-emerald-700 transition">
+            <Link to="/signup" className="text-sm bg-crimson-800 text-white px-4 py-1.5 rounded-lg hover:bg-crimson-900 transition">
               Sign Up
             </Link>
           </div>

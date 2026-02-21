@@ -48,7 +48,7 @@ export default function LeaderboardTabs() {
         {TABS.map((t) => (
           <button key={t.id} onClick={() => setTab(t.id)}
             className={`flex-1 min-w-[80px] py-3 text-sm font-medium transition whitespace-nowrap px-2 ${
-              tab === t.id ? 'text-emerald-600 border-b-2 border-emerald-600' : 'text-gray-500 hover:text-gray-700'
+              tab === t.id ? 'text-crimson-800 border-b-2 border-crimson-800' : 'text-gray-500 hover:text-gray-700'
             }`}>
             {t.label}
           </button>
@@ -76,20 +76,20 @@ export default function LeaderboardTabs() {
               return (
                 <div key={user.id}
                   className={`flex items-center gap-3 p-3 rounded-xl transition ${
-                    isMe ? 'bg-emerald-50 border border-emerald-200' : 'hover:bg-gray-50'
+                    isMe ? 'bg-crimson-50 border border-crimson-200' : 'hover:bg-gray-50'
                   }`}>
                   <span className="w-8 text-center font-bold text-gray-400 shrink-0">
                     {i < 3 ? MEDALS[i] : i + 1}
                   </span>
                   <span className="shrink-0">{char ? <SpriteImg id={char.id} size="sm" /> : '🌱'}</span>
                   <div className="flex-1 min-w-0">
-                    <p className={`font-medium truncate ${isMe ? 'text-emerald-700' : 'text-gray-800'}`}>
+                    <p className={`font-medium truncate ${isMe ? 'text-crimson-800' : 'text-gray-800'}`}>
                       {user.name} {isMe && '(You)'}
                     </p>
                     <p className="text-xs text-gray-400">{user.studentId} · {stageCount}/{stages.length} stages</p>
                   </div>
                   <div className="text-right shrink-0">
-                    <p className="font-bold text-emerald-600 text-sm">{displayXp} XP</p>
+                    <p className="font-bold text-crimson-800 text-sm">{displayXp} XP</p>
                     <p className="text-xs text-gray-400">Lv.{level}</p>
                   </div>
                 </div>

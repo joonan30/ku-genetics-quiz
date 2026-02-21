@@ -25,7 +25,7 @@ export default function CharacterSelection() {
           <motion.p
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-emerald-400 text-sm font-medium mb-2 tracking-wider"
+            className="text-crimson-400 text-sm font-medium mb-2 tracking-wider"
           >
             GENETICS JOURNEY
           </motion.p>

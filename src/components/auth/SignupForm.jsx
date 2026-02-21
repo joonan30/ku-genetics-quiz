@@ -46,7 +46,7 @@ export default function SignupForm() {
   ]
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-50 to-teal-100 px-4 py-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-crimson-50/60 to-gray-100 px-4 py-8">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold text-gray-800">Join the Quest</h1>
@@ -63,8 +63,8 @@ export default function SignupForm() {
                 <button type="button" onClick={() => setQuiz({ ...quiz, q1: 'yes' })}
                   className={`flex-1 py-2 rounded-lg text-sm font-medium transition border ${
                     quiz.q1 === 'yes'
-                      ? 'bg-emerald-600 text-white border-emerald-600'
-                      : 'bg-white text-gray-600 border-gray-300 hover:border-emerald-400'
+                      ? 'bg-crimson-800 text-white border-crimson-800'
+                      : 'bg-white text-gray-600 border-gray-300 hover:border-crimson-400'
                   }`}>
                   Yes
                 </button>
@@ -90,18 +90,18 @@ export default function SignupForm() {
             <div key={f.name}>
               <label className="block text-sm font-medium text-gray-700 mb-1">{f.label}</label>
               <input type={f.type} name={f.name} required value={form[f.name]} onChange={handleChange}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-crimson-600 focus:border-transparent outline-none transition"
                 placeholder={f.placeholder} />
             </div>
           ))}
           <button type="submit" disabled={loading}
-            className="w-full bg-emerald-600 text-white py-2.5 rounded-lg font-medium hover:bg-emerald-700 transition disabled:opacity-50">
+            className="w-full bg-crimson-800 text-white py-2.5 rounded-lg font-medium hover:bg-crimson-900 transition disabled:opacity-50">
             {loading ? 'Creating Account...' : 'Sign Up'}
           </button>
         </form>
         <p className="text-center text-sm text-gray-500 mt-6">
           Already have an account?{' '}
-          <Link to="/login" className="text-emerald-600 font-medium hover:underline">Login</Link>
+          <Link to="/login" className="text-crimson-700 font-medium hover:underline">Login</Link>
         </p>
       </div>
     </div>

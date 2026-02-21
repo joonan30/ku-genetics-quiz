@@ -37,7 +37,7 @@ export default function Inventory({ items }) {
                   </div>
                   <p className="text-xs font-medium text-gray-800 mt-1 truncate">{comp.korean}</p>
                   <p className="text-[10px] text-gray-500 truncate">{comp.name}</p>
-                  <p className="text-xs text-emerald-600 mt-0.5">{comp.trait}</p>
+                  <p className="text-xs text-crimson-700 mt-0.5">{comp.trait}</p>
                   <div className="flex justify-center mt-1">
                     {Array.from({ length: comp.rarity }).map((_, i) => (
                       <span key={i} className="text-[10px] text-yellow-400">&#9733;</span>

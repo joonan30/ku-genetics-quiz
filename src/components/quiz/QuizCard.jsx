@@ -28,7 +28,7 @@ export default function QuizCard({ question, index, total, selectedAnswer, answe
       </div>
 
       <div className="w-full bg-gray-200 rounded-full h-1.5 mb-6">
-        <div className="bg-emerald-500 h-1.5 rounded-full transition-all duration-500"
+        <div className="bg-crimson-700 h-1.5 rounded-full transition-all duration-500"
           style={{ width: `${((index + 1) / total) * 100}%` }} />
       </div>
 
@@ -36,13 +36,13 @@ export default function QuizCard({ question, index, total, selectedAnswer, answe
 
       <div className="space-y-3">
         {question.choices.map((choice, i) => {
-          let style = 'border-gray-200 hover:border-emerald-300 hover:bg-emerald-50'
+          let style = 'border-gray-200 hover:border-crimson-300 hover:bg-crimson-50'
           if (answered) {
             if (i === question.correctAnswer) style = 'border-green-400 bg-green-50 text-green-800'
             else if (i === selectedAnswer) style = 'border-red-400 bg-red-50 text-red-800'
             else style = 'border-gray-200 opacity-50'
           } else if (selectedAnswer === i) {
-            style = 'border-emerald-500 bg-emerald-50'
+            style = 'border-crimson-600 bg-crimson-50'
           }
           return (
             <motion.button key={i} whileTap={!answered ? { scale: 0.98 } : {}}
@@ -67,7 +67,7 @@ export default function QuizCard({ question, index, total, selectedAnswer, answe
 
       {answered && (
         <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} onClick={onNext}
-          className="mt-6 w-full bg-emerald-600 text-white py-3 rounded-xl font-medium hover:bg-emerald-700 transition">
+          className="mt-6 w-full bg-crimson-800 text-white py-3 rounded-xl font-medium hover:bg-crimson-900 transition">
           {index + 1 < total ? 'Next Question' : 'View Results'}
         </motion.button>
       )}

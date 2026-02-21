@@ -56,14 +56,14 @@ export default function LoginForm() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-50 to-teal-100 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-crimson-50/60 to-gray-100 px-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800">Genetics Journey</h1>
           <p className="text-gray-500 mt-2">Login to continue your journey</p>
         </div>
         {signupMessage && (
-          <div className="bg-emerald-50 text-emerald-700 p-3 rounded-lg mb-4 text-sm">{signupMessage}</div>
+          <div className="bg-crimson-50 text-crimson-800 p-3 rounded-lg mb-4 text-sm">{signupMessage}</div>
         )}
         {info && <div className="bg-blue-50 text-blue-700 p-3 rounded-lg mb-4 text-sm">{info}</div>}
         {error && (
@@ -71,7 +71,7 @@ export default function LoginForm() {
             {error}
             {error.includes('Email verification') && (
               <button onClick={handleResend} disabled={loading}
-                className="block mt-2 text-emerald-600 font-medium hover:underline text-xs">
+                className="block mt-2 text-crimson-700 font-medium hover:underline text-xs">
                 Resend verification email
               </button>
             )}
@@ -81,23 +81,23 @@ export default function LoginForm() {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
             <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition"
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-crimson-600 focus:border-transparent outline-none transition"
               placeholder="yourname@korea.ac.kr" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
             <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition"
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-crimson-600 focus:border-transparent outline-none transition"
               placeholder="********" />
           </div>
           <button type="submit" disabled={loading}
-            className="w-full bg-emerald-600 text-white py-2.5 rounded-lg font-medium hover:bg-emerald-700 transition disabled:opacity-50">
+            className="w-full bg-crimson-800 text-white py-2.5 rounded-lg font-medium hover:bg-crimson-900 transition disabled:opacity-50">
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
         <p className="text-center text-sm text-gray-500 mt-6">
           Don't have an account?{' '}
-          <Link to="/signup" className="text-emerald-600 font-medium hover:underline">Sign Up</Link>
+          <Link to="/signup" className="text-crimson-700 font-medium hover:underline">Sign Up</Link>
         </p>
       </div>
     </div>

@@ -44,7 +44,7 @@ export default function ProfilePage() {
                 <p className="text-gray-500">{char?.name} — {char?.korean}</p>
                 <p className="text-sm text-gray-400">Student ID: {userProfile.studentId}</p>
                 <p className="text-xs mt-1">
-                  <span className="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full text-xs font-medium">
+                  <span className="bg-crimson-100 text-crimson-800 px-2 py-0.5 rounded-full text-xs font-medium">
                     {CATEGORIES[char?.category]?.name}
                   </span>
                 </p>
@@ -52,7 +52,7 @@ export default function ProfilePage() {
             </div>
 
             {/* Level */}
-            <div className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl p-4 text-white mb-4">
+            <div className="bg-gradient-to-r from-crimson-800 to-crimson-950 rounded-xl p-4 text-white mb-4">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-sm opacity-80">Level</span>
                 <span className="text-4xl font-extrabold">{progress.level}</span>
@@ -70,10 +70,10 @@ export default function ProfilePage() {
             <div className="bg-gray-50 rounded-xl p-4 mb-4">
               <div className="flex justify-between text-sm mb-1">
                 <span className="text-gray-500">Journey: Anam → Dokdo</span>
-                <span className="font-bold text-emerald-600">{journey.completed}/{journey.total}</span>
+                <span className="font-bold text-crimson-800">{journey.completed}/{journey.total}</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
-                <div className="bg-emerald-500 h-2 rounded-full" style={{ width: `${journey.percentage}%` }} />
+                <div className="bg-crimson-700 h-2 rounded-full" style={{ width: `${journey.percentage}%` }} />
               </div>
               <p className="text-xs text-gray-400 mt-1">Distance traveled: {journey.maxDistance}km from Anam</p>
             </div>
@@ -116,7 +116,7 @@ export default function ProfilePage() {
                         <span className="text-gray-300 text-xs">&rarr;</span>
                         <div className="flex flex-col items-center">
                           <div className={`w-10 h-10 rounded-lg flex items-center justify-center border-2 overflow-hidden ${
-                            isCurrent ? 'border-yellow-400 bg-yellow-50' : unlocked ? 'border-emerald-300 bg-emerald-50' : 'border-gray-200 bg-gray-100 opacity-50'
+                            isCurrent ? 'border-yellow-400 bg-yellow-50' : unlocked ? 'border-crimson-300 bg-crimson-50' : 'border-gray-200 bg-gray-100 opacity-50'
                           }`}>
                             {unlocked ? <SpriteImg id={evo.character.id} size={32} /> : '?'}
                           </div>
